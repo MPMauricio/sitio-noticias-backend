@@ -1,0 +1,315 @@
+/* ==========================================================================
+   ESTILOS GENERALES (Reset básico y tipografía)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* ==========================================================================
+   ENCABEZADO (Header)
+   ========================================================================== */
+header {
+    background-color: #1a365d;
+    /* Azul oscuro institucional */
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 4px solid #2b6cb0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #cbd5e0;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   MENÚ DE NAVEGACIÓN (Nav)
+   ========================================================================== */
+nav {
+    background-color: #2d3748;
+    /* Gris oscuro elegante */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #4a5568;
+    color: #63b3ed;
+    /* Cambio de color sutil al pasar el mouse */
+}
+
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL Y MAQUETACIÓN EN COLUMNAS (Flexbox)
+   ========================================================================== */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    /* Espacio de separación entre columnas */
+}
+
+/* Columna de Noticias (Izquierda) */
+main section {
+    flex: 2;
+    min-width: 300px;
+}
+
+main section h2 {
+    color: #1a365d;
+    border-bottom: 2px solid #cbd5e0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+article {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+article h3 {
+    color: #2b6cb0;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+article p {
+    margin-bottom: 15px;
+    color: #4a5568;
+    text-align: justify;
+}
+
+article a {
+    display: inline-block;
+    color: #2b6cb0;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+article a:hover {
+    color: #1a365d;
+    border-bottom-color: #1a365d;
+}
+
+/* Columna Lateral / Formulario (Derecha) */
+aside {
+    flex: 1;
+    min-width: 280px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+aside h3 {
+    color: #1a365d;
+    margin-bottom: 10px;
+}
+
+aside p {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 20px;
+}
+
+/* Estilos específicos para el Formulario */
+form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    background-color: #f8fafc;
+    font-family: inherit;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #2b6cb0;
+    background-color: #fff;
+}
+
+form button {
+    width: 100%;
+    background-color: #2b6cb0;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1a365d;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA (Footer)
+   ========================================================================== */
+footer {
+    background-color: #1a365d;
+    color: #cbd5e0;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* --- REGLA PARA MODO OSCURO --- */
+body.dark-mode {
+    background-color: #1a202c;
+    /* Fondo gris oscuro */
+    color: #f7fafc;
+    /* Texto casi blanco */
+}
+
+/* Cambia las tarjetas de las noticias y el formulario a un tono más oscuro */
+body.dark-mode article,
+body.dark-mode aside {
+    background-color: #2d3748;
+    color: #f7fafc;
+    border-color: #4a5568;
+}
+
+/* --- MEJORAS DEFINITIVAS PARA EL FORMULARIO EN MODO OSCURO --- */
+
+/* Esta regla obliga a TODOS los textos dentro del formulario oscuro a ser blancos */
+body.dark-mode aside,
+body.dark-mode aside form,
+body.dark-mode aside label {
+    color: #ffffff !important;
+}
+
+/* Hace que el texto explicativo bajo el título del formulario sea gris claro */
+body.dark-mode aside p {
+    color: #e2e8f0 !important;
+}
+
+/* Cambia los títulos de las noticias para que resalten en el fondo oscuro */
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #63b3ed;
+    /* Azul claro brillante */
+}
+
+/* Asegura un margen estético para el bloque de alertas */
+#mensaje-alerta {
+    transition: all 0.3s ease;
+}
+
+/* Asegúrate de que esta regla esté al final de estilos.css */
+body.dark-mode article p {
+    color: #edf2f7 !important;
+}
+
+/* ==========================================================================
+   ESTILOS DE TABLAS (Panel administrativo)
+   ========================================================================== */
+.tabla-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 1rem;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tabla-usuarios tragedies,
+.tabla-usuarios th,
+.tabla-usuarios td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.tabla-usuarios thead tr {
+    background-color: #1a365d;
+    /* Azul marino */
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.tabla-usuarios tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Efecto cebra: filas alternas de color gris claro */
+.tabla-usuarios tbody tr:nth-of-type(even) {
+    background-color: #f8fafc;
+}
+
+/* Resalta la fila cuando pasas el mouse por encima */
+.tabla-usuarios tbody tr:hover {
+    background-color: #edf2f7;
+}
+
+/* Adaptación automática para el Modo Oscuro */
+body.dark-mode .tabla-usuarios {
+    background-color: #2d3748;
+    color: #ffffff;
+}
+
+body.dark-mode .tabla-usuarios thead tr {
+    background-color: #2b6cb0;
+}
+
+body.dark-mode .tabla-usuarios tbody tr:nth-of-type(even) {
+    background-color: #1a202c;
+}

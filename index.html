@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Vocero Digital - Inicio</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>El Vocero Digital</h1>
+        <p>Tu fuente de información actualizada día a día</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="tecnologia.html">Tecnología</a></li>
+            <li><a href="deportes.html">Deportes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Noticias Destacadas</h2>
+            <article>
+                <h3>Gran Avance Tecnológico en el Desarrollo de Software</h3>
+
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop"
+                    alt="Computadora con código" style="width: 100%; height: auto; border-radius: 6px; margin: 15px 0;">
+                <p>Las nuevas metodologías ágiles y las plataformas modernas están permitiendo una aceleración sin
+                    precedentes en la creación de herramientas digitales globales...</p>
+                <a href="tecnologia.html">Leer más</a>
+            </article>
+        </section>
+
+        <aside>
+            <h3>Formulario de Suscripción</h3>
+            <p>Recibe alertas de última hora directamente en tu bandeja de entrada.</p>
+            <div id="mensaje-alerta"
+                style="display: none; padding: 10px; margin-bottom: 15px; border-radius: 4px; font-weight: bold; font-size: 0.9em;">
+            </div>
+            <form action="http://127.0.0.1:5001/procesar_registro" method="POST">
+                <label for="nombre">Nombre Completo:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+
+                <label for="correo">Correo Electrónico:</label><br>
+                <input type="email" id="correo" name="correo" required><br><br>
+
+                <label for="comentario">Sugerencias o Comentarios:</label><br>
+                <textarea id="comentario" name="comentario" rows="4"></textarea><br><br>
+
+                <button type="submit">Suscribirse al Boletín</button>
+            </form>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2026 El Vocero Digital - Proyecto Educativo de Aprendizaje</p>
+    </footer>
+
+    <button id="btn-modo"
+        style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background-color: #1a365d; color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0px 4px 6px rgba(0,0,0,0.1);">
+        🌙 Modo Oscuro
+    </button>
+
+
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
