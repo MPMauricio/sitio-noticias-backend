@@ -66,7 +66,7 @@ def ver_usuarios():
         <div style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px; color: red;">
             <h1>Error al cargar el panel desde la nube</h1>
             <p>{err}</p>
-            <a href="http://127.0.0.1:5500/index.html">Volver al Periódico</a>
+            <a href="https://mpmauricio.github.io/sitio-noticias-backend/">Volver al Periódico</a>
         </div>
         '''
 
