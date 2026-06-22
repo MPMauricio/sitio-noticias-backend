@@ -5,21 +5,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración - Suscriptores</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            margin-bottom: 25px;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 15px;
+        }
+
+        .header h1 {
+            color: #2d3748;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4a5568;
+            color: #ffffff;
+            padding: 12px 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 15px;
+            color: #4a5568;
+        }
+
+        tr:hover {
+            background-color: #f7fafc;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 20px;
+            background-color: #3182ce;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 6px;
+            font-size: 14px;
+            transition: background 0.2s ease;
+        }
+
+        .btn-volver:hover {
+            background-color: #2b6cb0;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: #a0aec0;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Panel de Control</h1>
-        <p>Lista oficial de usuarios suscritos al boletín</p>
-    </header>
+    <div class="container">
+        <div class="header">
+            <h1>Panel de Control</h1>
+            <p>Lista oficial de usuarios suscritos al boletín informativo</p>
+        </div>
 
-    <main style="max-width: 1000px; display: block;">
-        <h2>Suscriptores Registrados</h2>
-
-        <div class="contenedor-tabla" style="overflow-x: auto; margin-top: 20px;">
-            <table class="tabla-usuarios">
+        <div class="table-container">
+            <table>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -32,10 +124,10 @@
                 <tbody>
                     {% for usuario in suscriptores %}
                     <tr>
-                        <td>{{ usuario.id }}</td>
+                        <td><strong>{{ usuario.id }}</strong></td>
                         <td>{{ usuario.nombre }}</td>
                         <td>{{ usuario.correo }}</td>
-                        <td>{{ usuario.comentario }}</td>
+                        <td>{{ usuario.comentario if usuario.comentario else 'Sin comentarios' }}</td>
                         <td>{{ usuario.fecha_registro }}</td>
                     </tr>
                     {% endfor %}
@@ -43,12 +135,8 @@
             </table>
         </div>
 
-        <br>
-        <a href="<a href=" https://mpmauricio.github.io/sitio-noticias-backend/"
-            style="display: inline-block; margin-top: 20px; font-weight: bold; color: #2b6cb0;">Volver al Periódico</a>"
-        style="display: inline-block; margin-top: 20px; font-weight: bold; color: #2b6cb0;">← Volver al
-        Periódico</a>
-    </main>
+        <a href="https://mpmauricio.github.io/sitio-noticias-backend/" class="btn-volver">← Volver al Periódico</a>
+    </div>
 
     <footer>
         <p>&copy; 2026 El Vocero Digital - Panel Administrativo</p>
